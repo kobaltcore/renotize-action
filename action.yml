@@ -1,0 +1,20 @@
+name: "renotize"
+author: "kobaltcore"
+description: "A GitHub action that packages renotize to allow the easy notarization and distribution of Ren'Py projects for macOS."
+inputs:
+  file:
+    description: "The path to the ZIP file to notarize."
+    required: true
+  renkit-version:
+    description: "The version of renkit to use during the build."
+    required: false
+    default: "latest"
+outputs:
+  distributions:
+    description: "A list of file names of notarized distributions."
+runs:
+  using: "node16"
+  main: "dist/index.js"
+branding:
+  icon: "box"
+  color: "yellow"
